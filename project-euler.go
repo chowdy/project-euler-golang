@@ -23,7 +23,7 @@ func main() {
 	}
 
 	// Get the solution from the plugin we opened
-	solutionFunc, err := solution.Lookup("Run")
+	solutionFunc, err := solution.Lookup("Solution" + problem)
 	if err != nil {
 		panic(err)
 	}
