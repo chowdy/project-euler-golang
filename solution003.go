@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"sort"
+	"./utils"
 )
 
 /*
@@ -10,23 +11,9 @@ import (
  * What is the largest prime factor of the number 600851475143 ?
  */
 
-func primeFactors(n int) []int {
-
-	pfs := make([]int, 0)
-
-	for i := 2; n > 1; i++ {
-		if n % i == 0 {
-			pfs = append(pfs, i)
-			n /= i
-		}
-	}
-
-	return pfs
-}
-
 func Solution003() string {
 
-	pfs := primeFactors(600851475143)
+	pfs := utils.PrimeFactors(600851475143)
 	sort.Ints(pfs)
 	answer := pfs[len(pfs)-1]
 	return fmt.Sprint(answer)
