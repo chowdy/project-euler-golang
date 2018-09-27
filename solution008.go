@@ -44,7 +44,7 @@ func Solution008() string {
 		// A variable named "_" is a convention for "I don't care about this variable"
 		// Here, it's the index of the character in the string, which is neat. Range is dope.
 		for _, digit := range adjacents {
-			prod *= (int(digit) - '0')
+			prod *= int(digit) - '0'
 		}
 
 		if prod > max {
