@@ -19,17 +19,16 @@ func PrimeFactors(n int) []int {
 	return pfs
 }
 
-func IsPallindrome(n int) bool {
+func IsPallindromeInt(n int) bool {
+	return IsPallindromeString(strconv.Itoa(n))
+}
 
-	nAsString := strconv.Itoa(n)
-	nLen := len(nAsString)
-
-	for i := 0; i < len(nAsString); i++ {
-		if nAsString[i] != nAsString[nLen-i-1] {
+func IsPallindromeString(str string) bool {
+	nLen := len(str)
+	for i := 0; i < len(str); i++ {
+		if str[i] != str[nLen-i-1] {
 			return false
 		}
 	}
-
 	return true
-
 }

@@ -19,7 +19,7 @@ func Solution004() string {
 	for i := 100; i <= 999; i++ {
 		for j := 100; j <= 999; j++ {
 			prod := i*j
-			if utils.IsPallindrome(prod) && prod > answer {
+			if utils.IsPallindromeInt(prod) && prod > answer {
 				answer = prod
 			}
 		}
