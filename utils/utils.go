@@ -32,3 +32,25 @@ func IsPallindromeString(str string) bool {
 	}
 	return true
 }
+
+// How many solutions can I get away with using this for?
+func IsPrimeNaive(n int) bool {
+	for i := 2; i < n; i++ {
+		if n % i == 0 {
+			return false
+		}
+	}
+	return true
+}
+
+// 0 and 1 are not prime, but 2 is!
+var sieve = []bool{ false, false, true }
+func IsPrime(n int) bool {
+
+	// If the sieve slice is too small, then grow it and rediscover the primes
+	if len(sieve) < n {
+		// TODO: This
+	}
+
+	return sieve[n]
+}
