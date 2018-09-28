@@ -1,7 +1,7 @@
 package main
 
 import (
-	"project-euler-golang/utils"
+	"./utils"
 	"strconv"
 )
 
@@ -14,12 +14,10 @@ func Solution010() string {
 
 	MAX := 2000000
 	answer := 0
-
-	for i := 0; i < MAX; i++ {
-		if utils.IsPrimeNaive(i) {
-			answer += i
-		}
+	utils.BuildPrimesSieve(MAX)
+	for _, p := range utils.GetPrimes() {
+		answer += p
 	}
-
 	return strconv.Itoa(answer)
+
 }
