@@ -94,3 +94,12 @@ func GetPrimes() []int {
 	}
 	return primes
 }
+
+var currTriNum = 0
+var currTriNumIndex = 0
+func GetNextTriangleNumber() int {
+	currTriNumIndex++
+	currTriNum += currTriNumIndex
+	return currTriNum
+}
+
