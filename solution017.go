@@ -92,7 +92,6 @@ func Solution017() string {
 	answer := 0
 	for i := 1; i <= 1000; i++ {
 		answer += len(numInWords(i))
-		println(i, " : ", numInWords(i))
 	}
 	return fmt.Sprint(answer)
 }
