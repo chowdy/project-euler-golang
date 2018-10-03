@@ -25,7 +25,7 @@ var onesWords = map[int]string {
 	9: "nine",
 }
 
-var teens = map[int]string {
+var teensWords = map[int]string {
 	11: "eleven",
 	12: "twelve",
 	13: "thirteen",
@@ -56,7 +56,7 @@ func numInWords(n int) string {
 	if n < 10 {
 		wordy = onesWords[n]
 	} else if n > 10 && n < 20 {
-		wordy = teens[n]
+		wordy = teensWords[n]
 	} else if n < 100 {
 		tens := n / 10
 		ones := n - tens*10
@@ -75,7 +75,7 @@ func numInWords(n int) string {
 
 		if tens == 1 && n - hundreds * 100 < 20 {
 			wordy += "and"
-			wordy += teens[n - hundreds * 100]
+			wordy += teensWords[n - hundreds * 100]
 		} else {
 			wordy += "and"
 			wordy += tensWords[tens]
