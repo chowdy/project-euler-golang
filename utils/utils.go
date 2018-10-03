@@ -95,6 +95,18 @@ func GetPrimes() []int {
 	return primes
 }
 
+func GetProperDivisors(n int) []int {
+
+	properDivs := []int { 1 }
+	for i := 2; i < n; i++ {
+		if n % i == 0 {
+			properDivs = append(properDivs, i)
+		}
+	}
+
+	return properDivs
+}
+
 var currTriNum = 0
 var currTriNumIndex = 0
 func GetNextTriangleNumber() int {
@@ -102,4 +114,3 @@ func GetNextTriangleNumber() int {
 	currTriNum += currTriNumIndex
 	return currTriNum
 }
-
