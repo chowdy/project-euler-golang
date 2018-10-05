@@ -2,6 +2,7 @@ package utils
 
 import (
 	"strconv"
+	"fmt"
 )
 
 // Returns a slice of prime factors of n
@@ -103,3 +104,27 @@ func GetNextTriangleNumber() int {
 	return currTriNum
 }
 
+var factorialMemo = map[int]int{}
+func Factorial(n int) int {
+	fact, ok := factorialMemo[n]
+	if ok { return fact }
+
+	fact = 1
+	if n != 0 && n != 1 {
+		for i := n; i >= 1; i-- {
+			fact *= i
+		}
+	}
+
+	factorialMemo[n] = fact
+	return fact
+}
+
+func DigitsOfInt(n int) []int {
+	digits := []int{}
+	nString := fmt.Sprint(n)
+	for _, c := range nString {
+		digits = append(digits, int(c - '0'))
+	}
+	return digits
+}
